@@ -21,7 +21,7 @@ export default {
         },
 
         giphyImage(){
-            return this.giphyItem.images.fixed_height.url
+            return this.giphyItem.images.fixed_height_small_still.url
         },
     },
     

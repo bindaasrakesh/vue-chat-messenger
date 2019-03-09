@@ -7,7 +7,7 @@
 </template>
 
 <script>
-//import GiphyDash from './components/Giphy/GiphyDash'
+
 import ChatMessenger from './components/messenger/Messenger'
 
 export default {

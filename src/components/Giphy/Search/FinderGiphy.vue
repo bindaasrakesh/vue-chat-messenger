@@ -1,38 +1,41 @@
 <template>
-    <form v-on:submit.prevent="handelFormSubmit">
-                <div class="search-type-row">
+    <form class="search-form" v-on:submit.prevent="handelFormSubmit">
+                <!-- <div class="search-type-row">
                 <b-form-group  label="Search Type" class="search-type">
                     <b-form-radio value="gifs" v-model="selected" name="some-radios">GIF</b-form-radio>
                     <b-form-radio value="stickers" v-model="selected" name="some-radios">Sticker</b-form-radio>
                 </b-form-group>  
-                </div>
+                </div> -->
                   <!-- <div class="mt-3">Selected: <strong>{{ selected }}</strong></div> -->
-                <div class="action-row d-flex mb-4">
-                    <div class="form-group col-3">
-                        <input type="text" v-model="searchString" class="form-control"  :placeholder="selected">
+                <div class="action-row ">
+                    <div class="form-group ">
+                        <input type="text" v-model="searchString" class="form-control"  placeholder="Search">
                     </div>
-                    <div class="form-group col-2">
+                    <!-- <div class="form-group col-2">
                         <select v-model="selectOption">
                              <option disabled value="">Please select one</option>
                             <option selected :value="6">6</option>
-                            <option :value="12">12</option>
+                            <option :value="12">12</option> 
                             <option :value="18">18</option>
                             <option :value="24">24</option>
                         </select>
-                    </div>
+                    </div> -->
                 </div>
 
         </form>
 </template>
 
 <script>
-import giphyApi from './Api/auth.js'
+import giphyGifApi from '../Api/auth.js'
+import stickerApi from '../Api/auth.js'
 export default {
     name:'FinderGiphy',
+    props:[],
     data(){
         return{
             searchString:'',
-            selected:'stickers',
+            selected:'gifs',
+            selectedStckr:'stickers',
             selectOption:'',
         }
 
@@ -43,7 +46,7 @@ export default {
         handelFormSubmit(){
             window.eventBus.$emit('SearchForGiphyStarted')
 
-            giphyApi({
+            giphyGifApi({
             apiKey : 'HLHjYzcaAgKysotw0QcVYBDuDYXf2Ib4',
              term: this.searchString,
              searchType:this.selected,
@@ -54,6 +57,20 @@ export default {
              lang:'en',
           },response => {
                 window.eventBus.$emit('searchResultFromGiphy',response.data);
+            }
+            );
+
+            stickerApi({
+            apiKey : 'HLHjYzcaAgKysotw0QcVYBDuDYXf2Ib4',
+             term: this.searchString,
+             searchType:this.selectedStckr,
+             giphytarget: 'search',
+             result: this.selectOption,
+             rating: 'G',
+             offset:0,
+             lang:'en',
+          },response => {
+                window.eventBus.$emit('searchResultFromGiphySticker',response.data);
             }
             );
   

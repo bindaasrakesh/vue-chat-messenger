@@ -1,12 +1,9 @@
 <template>
     <div class="container-fluid">
-      <div class="heading text-center mt-3 mb-3">
-         <h3> Dashboard Random GIF </h3>
-        
-      </div>
-      <div class="search-box">
+ 
+      <!-- <div class="search-box">
         <finderGiphy />
-      </div>
+      </div> -->
 
       <div class="giphy-container-box">
         <!-- Bind Giphylist data -->
@@ -24,7 +21,7 @@
 
 import giphyApi from './Api/auth.js'
 import giphyList from './GiphyList'
-import finderGiphy from './FinderGiphy'
+import finderGiphy from './Search/FinderGiphy'
 
 export default {
   name: 'GiphyAppDash',
@@ -50,14 +47,14 @@ export default {
              giphytarget: 'trending',
            //  giphytarget: 'random',
              tagItem:'Funny',
-             result: 6,
+             result: 2,
              rating: 'G',
             
     },response => this.giphyListData = response.data);
      window.eventBus.$on('SearchForGiphyStarted', ()=>{
      this.loading = true;
    });
-   window.eventBus.$on('searchResultFromGiphy', giphyListData =>{
+   window.eventBus.$on('searchResultFromGiphySticker', giphyListData =>{
     console.log('search result',giphyListData );
     this.loading = false;
      this.giphyListData = giphyListData;

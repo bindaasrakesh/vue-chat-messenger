@@ -4,7 +4,7 @@
         
         	<div class="container-fluid h-100">
 			<div class="row justify-content-center align-items-end pt-4 pb-4 chat-row-container">
-				<div class="col-md-4 col-xl-3 chat"><div class="card mb-sm-3 mb-md-0 contacts_card">
+				<div class="col-md-4 col-xl-3 chat"><div class="card chat-common-card mb-sm-3 mb-md-0 contacts_card">
 					<div class="card-header">
 						<div class="input-group">
 							<input type="text" placeholder="Search..." name="" class="form-control search">
@@ -80,7 +80,7 @@
 					<div class="card-footer"></div>
 				</div></div>
 				<div class="col-md-8 col-xl-6 chat">
-					<div class="card">
+					<div class="card chat-common-card">
 						<div class="card-header msg_head">
 							<div class="d-flex bd-highlight">
 								<div class="img_cont">
@@ -172,15 +172,38 @@
 							</div>
 						</div>
 						<div class="card-footer">
+							<div class="emoji-row position-relative">
+								<finderGiphy />
+								<b-card no-body>
+									<b-tabs pills card>
+										<b-tab  title="GIF" active>
+											<b-card-text>
+												<GiphyGIF />
+											</b-card-text>
+										</b-tab>
+										<b-tab  title="STICKER">
+											<b-card-text>
+												<GiphyStickers />
+												
+												</b-card-text>
+											</b-tab>
+									</b-tabs>
+								</b-card>
+							</div>
 							<div class="input-group">
 								<div class="input-group-append">
-									<span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
+									<span class="input-group-text attach_btn smile-btn">
+										<!-- <i class="fas fa-paperclip"></i> -->
+										<font-awesome-icon icon="smile"></font-awesome-icon>
+										</span>
 								</div>
 								<textarea name="" class="form-control type_msg" placeholder="Type your message..."></textarea>
 								<div class="input-group-append">
 									<span class="input-group-text send_btn">
                                         <!-- <i class="fas fa-location-arrow"></i> -->
-                                        <font-awesome-icon :icon="['fas', 'spinner']" />
+                                     
+										 
+									<font-awesome-icon icon="location-arrow"></font-awesome-icon>
                                     
                                         </span>
 								</div>
@@ -194,8 +217,20 @@
 </template>
 
 <script>
+import GiphyGIF from '../Giphy/GiphyGIF'
+import GiphyStickers from '../Giphy/GiphySticker'
+import finderGiphy from '../Giphy/Search/FinderGiphy'
+
 export default {
-    name:'ChatMessenger'
+	name:'ChatMessenger',
+	components:{
+	 GiphyGIF,
+	 GiphyStickers,
+	 finderGiphy
+	},
+	methods:{
+		
+	}
 }
 </script>
 
