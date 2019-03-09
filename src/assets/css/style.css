@@ -221,6 +221,12 @@ cursor: pointer;
 background-color: rgba(0,0,0,0.2);
 }
 
+.emoji-row  .tab-content{
+    overflow-y: auto;
+    max-height: 200px;
+    position: relative;
+}
+
 
 form.search-form {
     position: absolute;

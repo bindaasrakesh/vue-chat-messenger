@@ -36,7 +36,7 @@ export default {
             searchString:'',
             selected:'gifs',
             selectedStckr:'stickers',
-            selectOption:'',
+            selectOption:'12',
         }
 
     },

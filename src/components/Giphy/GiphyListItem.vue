@@ -1,10 +1,10 @@
 <template>
-<li class="col">
-  <b-card class="text-center">
+<li class="col-4">
+
     <figure>
         <img v-bind:src="giphyImage" v-bind:alt="giphyTitle" />
     </figure>
-  </b-card>
+ 
 </li>
 </template>
 
@@ -30,5 +30,5 @@ export default {
 </script>
 
 <style scoped>
-
+img{ max-width: 100%;}
 </style>

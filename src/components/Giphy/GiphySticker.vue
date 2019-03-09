@@ -47,7 +47,7 @@ export default {
              giphytarget: 'trending',
            //  giphytarget: 'random',
              tagItem:'Funny',
-             result: 2,
+             result: 16,
              rating: 'G',
             
     },response => this.giphyListData = response.data);
