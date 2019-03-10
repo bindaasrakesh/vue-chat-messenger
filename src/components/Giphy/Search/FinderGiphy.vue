@@ -1,25 +1,10 @@
 <template>
     <form class="search-form" v-on:submit.prevent="handelFormSubmit">
-                <!-- <div class="search-type-row">
-                <b-form-group  label="Search Type" class="search-type">
-                    <b-form-radio value="gifs" v-model="selected" name="some-radios">GIF</b-form-radio>
-                    <b-form-radio value="stickers" v-model="selected" name="some-radios">Sticker</b-form-radio>
-                </b-form-group>  
-                </div> -->
-                  <!-- <div class="mt-3">Selected: <strong>{{ selected }}</strong></div> -->
+
                 <div class="action-row ">
                     <div class="form-group ">
                         <input type="text" v-model="searchString" class="form-control"  placeholder="Search">
                     </div>
-                    <!-- <div class="form-group col-2">
-                        <select v-model="selectOption">
-                             <option disabled value="">Please select one</option>
-                            <option selected :value="6">6</option>
-                            <option :value="12">12</option> 
-                            <option :value="18">18</option>
-                            <option :value="24">24</option>
-                        </select>
-                    </div> -->
                 </div>
 
         </form>

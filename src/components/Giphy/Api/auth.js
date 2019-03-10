@@ -12,6 +12,11 @@ let API_URL = 'https://api.giphy.com/v1/';
     if(!options.apiKey){
         throw new Error ('Giphy search would require a key');
     }
+    // else if(!options.term){
+    //     throw new Error ('Search filed can not be blank');
+     
+    // }
+
     let BASE_URL =API_URL+ options.searchType +'/'+ options.giphytarget;
 //   let searchType = options.searchType ;
   //  let targetCat = options.giphytarget ;

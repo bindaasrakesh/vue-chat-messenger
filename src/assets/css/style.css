@@ -13,7 +13,7 @@ body,html{
     margin-bottom: auto;
 }
 .chat-common-card{
-    height: 80vh;
+    height: 90vh;
     border-radius: 15px !important;
     background-color: rgba(0,0,0,0.4) !important;
 }
@@ -28,6 +28,7 @@ body,html{
 .card-header{
     border-radius: 15px 15px 0 0 !important;
     border-bottom: 0 !important;
+    box-shadow: 0 0 10px #777;
 }
 .card-footer{
 border-radius: 0 0 15px 15px !important;
@@ -89,7 +90,7 @@ background-color: rgba(0,0,0,0.3) !important;
     margin-bottom: 15px !important;
 }
 .active{
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(255,255,255,0.3);
 }
 .user_img{
     height: 70px;
@@ -221,6 +222,14 @@ cursor: pointer;
 background-color: rgba(0,0,0,0.2);
 }
 
+.emoji-row{
+    display: none;
+
+}
+.emoji-row.active{
+    display: block;   
+}
+
 .emoji-row  .tab-content{
     overflow-y: auto;
     max-height: 200px;
@@ -234,6 +243,24 @@ form.search-form {
     top: 5px;
     z-index: 9;
 }
+
+
+/* */
+textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #fff;
+  }
+  */
+  textarea::-moz-placeholder { /* Firefox 19+ */
+    color: #fff;
+  }
+  */
+textarea:-ms-input-placeholder { /* IE 10+ */
+    color: #fff;
+  }
+  */
+textarea:-moz-placeholder { /* Firefox 18- */
+    color: #fff;
+  }
 
 
 @media(max-width: 576px){
