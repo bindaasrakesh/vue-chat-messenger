@@ -17,6 +17,22 @@ import UserList from './UserList'
 import UserChatBox from './UserChatBox'
 
 
+let chatData = {
+  "results": [
+    {
+      "url": "https://scribe.zopim.com/api/v2/chats/123",
+      "timestamp": "2014-10-15T16:31:25Z",
+      "preview": "Hi there! How are you?",
+      "type": "chat",
+      "id": "123"
+    }
+  ],
+  "count": 1,
+  "prev_url": null,
+  "next_url": null
+}
+
+
 export default {
 	name:'ChatMessenger',
 	components:{
