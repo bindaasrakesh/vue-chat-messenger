@@ -4,7 +4,7 @@
         
         	<div class="container-fluid h-100">
 					<div class="row justify-content-center align-items-end pt-4 pb-4 chat-row-container">
-							<UserList />
+							<UserListData />
 							<UserChatBox />
 					
 					</div>
@@ -13,30 +13,30 @@
 </template>
 
 <script>
-import UserList from './UserList'
+import UserListData from './UserList'
 import UserChatBox from './UserChatBox'
 
 
-let chatData = {
-  "results": [
-    {
-      "url": "https://scribe.zopim.com/api/v2/chats/123",
-      "timestamp": "2014-10-15T16:31:25Z",
-      "preview": "Hi there! How are you?",
-      "type": "chat",
-      "id": "123"
-    }
-  ],
-  "count": 1,
-  "prev_url": null,
-  "next_url": null
-}
+// let chatData = {
+//   "results": [
+//     {
+//       "url": "https://scribe.zopim.com/api/v2/chats/123",
+//       "timestamp": "2014-10-15T16:31:25Z",
+//       "preview": "Hi there! How are you?",
+//       "type": "chat",
+//       "id": "123"
+//     }
+//   ],
+//   "count": 1,
+//   "prev_url": null,
+//   "next_url": null
+// }
 
 
 export default {
 	name:'ChatMessenger',
 	components:{
-	 UserList,
+	 UserListData,
 	 UserChatBox,
 
 	},
